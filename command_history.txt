@@ -1,0 +1,37 @@
+  568  sudo dnf -y install dnf-plugins-core\nsudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+  569  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  570  sudo dnf install --allowerasing docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  571  sudo systemctl enable --now docker
+  572  sudo docker run hello-world
+  573  docker ps -a
+  574  docker rm hello-world
+  575  docker rm 19a072878e00
+  576  docker ps -a
+  577  sudo docker run -it --name mi-debian bash
+  578  docker rm mi-debian
+  579  docker run -it --name mi-debian debian bash
+  580  docker ps -a
+  581  docker start mi-debian
+  582  docker exec -it mi-debian bash
+  583  docker run -d --name mi-nginx -p 8080:80 nginx
+  584  docker logs mi-nginx
+  585* cd ~
+  586* cd Documentos/dockerize_01/ntrega-1-fundamentos-de-docker-debian-nginx-y-nextcloud-Cristian-VP
+  587* docker run -d --name mi-nextcloud -p 8888:80 -e SQLITE_DATABASE="mi_base_de_datos" nextcloud
+  588* sudo docker run -d --name mi-nextcloud -p 8888:80 -e SQLITE_DATABASE="mi_base_de_datos" nextcloud
+  589* docker logs mi-nextcloud | grep "mi_base_de_datos"
+  590* sudo docker logs mi-nextcloud | grep "mi_base_de_datos"
+  591* sudo docker logs mi-nextcloud 
+  592* docker ps
+  593* sudo docker ps
+  594* docker logs mi-nextcloud
+  595* sudo docker logs mi-nextcloud
+  596* sudo docker exec mi-nextcloud printenv | grep SQLITE_DATABASE
+  597  docker run -d --name servidor_web -p 8181:80 nginx
+  598  docker ps
+  599  docker images
+  600  docker stop servidor_web
+  601  docker rm servidor_web
+  602  docker ps -a
+  603* cd ntrega-1-fundamentos-de-docker-debian-nginx-y-nextcloud-Cristian-VP
+  604* git status
